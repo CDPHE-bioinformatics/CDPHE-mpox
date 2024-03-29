@@ -19,6 +19,8 @@ workflow theiacov_mpox_transfer {
         File kraken_report_dehosted
         File nextclade_json
         File nextclade_tsv
+        File read1_dehosted
+        File read2_dehosted
 
     }
 
@@ -38,7 +40,9 @@ workflow theiacov_mpox_transfer {
             kraken_report = kraken_report,
             kraken_report_dehosted = kraken_report_dehosted,
             nextclade_json = nextclade_json,
-            nextclade_tsv = nextclade_tsv
+            nextclade_tsv = nextclade_tsv,
+            read1_dehosted = read1_dehosted,
+            read2_dehosted = read2_dehosted
 
     }
 
@@ -70,6 +74,8 @@ task transfer{
         File kraken_report_dehosted
         File nextclade_json
         File nextclade_tsv
+        File read1_dehosted
+        File read2_dehosted
 
     }
     
@@ -84,6 +90,8 @@ task transfer{
         gsutil -m cp ~{kraken_report_dehosted} ~{transfer_bucket}/kraken/
         gsutil -m cp ~{nextclade_json} ~{transfer_bucket}/nextclade/
         gsutil -m cp ~{nextclade_tsv} ~{transfer_bucket}/nextclade/
+        gsutil -m cp ~{read1_dehosted} ~{transfer_bucket}/fastq_scrubbed/
+        gsutil -m cp ~{read2_dehosted} ~{transfer_bucket}/fastq_scrubbed/
 
         # transfer date
         transferdate=`date`
