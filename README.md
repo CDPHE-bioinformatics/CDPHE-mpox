@@ -2,7 +2,7 @@
 
 This repo contains all our mpox related workflows. 
 
-Currently we use the XGen tiled amplicon primer scheme for WGS. We then perform genome assemlby using [Theiagen Genomic's PHB wf_theiacov_illumina_pe.wdl](https://github.com/theiagen/public_health_bioinformatics/tree/main/workflows/theiacov) on the Terra platform. Following assembly we transfer the resutls and intermediate files to our gcp buckets using the TheaiCov_mpox_transfer.wdl.
+Currently we use the XGen tiled amplicon primer scheme for WGS. We then perform genome assembly using [Theiagen Genomic's PHB wf_theiacov_illumina_pe.wdl](https://github.com/theiagen/public_health_bioinformatics/tree/main/workflows/theiacov) on the Terra platform. Following assembly we transfer the resutls and intermediate files to our GCP buckets using the TheaiCov_mpox_transfer.wdl.
 
 ## transfer TheiaCov_mpox_transfer.wdl
 This wdl workflow transfers the result files and intermediate files from the wf_theiacov_illumina_pe.wdl workflow to our bucket.
